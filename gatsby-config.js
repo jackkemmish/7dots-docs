@@ -7,6 +7,14 @@ module.exports = {
 		author: '7DOTS',
 	},
 	plugins: [
+		{
+			resolve: `gatsby-plugin-google-fonts`,
+			options: {
+				fonts: [`poppins\:200,300,400,600`, `roboto slab`],
+				display: 'swap',
+			},
+		},
+		'gatsby-plugin-preload-fonts',
 		'gatsby-plugin-styled-components',
 		'gatsby-plugin-gatsby-cloud',
 		'gatsby-plugin-image',
@@ -47,6 +55,14 @@ module.exports = {
 				path: `${__dirname}/src/pages/`,
 			},
 			__key: 'pages',
+		},
+		{
+			resolve: 'gatsby-plugin-react-svg',
+			options: {
+				rule: {
+					include: /svg/,
+				},
+			},
 		},
 	],
 }

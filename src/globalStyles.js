@@ -14,10 +14,10 @@ const GlobalStyle = createGlobalStyle`
     }
 
     html {
-        font-family: sans-serif;
+        font-family: 'Poppins', sans-serif;
         -ms-text-size-adjust: 100%;
         -webkit-text-size-adjust: 100%;
-        font: 112.5%/1.45em helvetica, serif;
+        font: 112.5%/1.45em 'Poppins', sans-serif;
         box-sizing: border-box;
         overflow-y: scroll;
     }
