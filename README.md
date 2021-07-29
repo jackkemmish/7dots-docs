@@ -3,9 +3,8 @@
     <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
   </a>
 </p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+<h1 align="center">7DOTS Documentation</h1>
+<h3 align="center">Gatsby & MDX</h3>
 
 ## 🚀 Quick start
 
