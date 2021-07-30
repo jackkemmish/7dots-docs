@@ -1,10 +1,32 @@
 const path = require('path')
+const config = require('./config/website')
+
+require('dotenv').config({
+	path: `.env.${process.env.NODE_ENV}`,
+})
 
 module.exports = {
 	siteMetadata: {
-		siteUrl: 'https://7dots-docs.com',
-		title: '7DOTS Docs',
-		author: '7DOTS',
+		siteUrl: config.siteUrl,
+		title: config.siteTitle,
+		twitterHandle: config.twitterHandle,
+		description: config.siteDescription,
+		keywords: ['Developer', 'Gatsby', 'Silverstripe'],
+		canonicalUrl: config.siteUrl,
+		image: config.siteLogo,
+		author: {
+			name: config.author,
+			minibio: config.minibio,
+		},
+		organization: {
+			name: config.organization,
+			url: config.siteUrl,
+			logo: config.siteLogo,
+		},
+		social: {
+			twitter: config.twitterHandle,
+			fbAppID: '',
+		},
 	},
 	plugins: [
 		{
@@ -23,19 +45,23 @@ module.exports = {
 		{
 			resolve: 'gatsby-plugin-manifest',
 			options: {
-				name: '7dots-docs',
-				short_name: 'docs',
-				start_url: '/',
-				background_color: '#663399',
-				theme_color: '#663399',
-				display: 'minimal-ui',
-				icon: 'src/images/icon.png',
+				name: config.siteTitle,
+				short_name: config.siteTitleShort,
+				description: config.siteDescription,
+				start_url: config.pathPrefix,
+				lang: config.lang,
+				background_color: config.backgroundColor,
+				theme_color: config.themeColor,
+				display: 'standalone',
+				icon: config.siteLogo,
 			},
 		},
 		{
 			resolve: `gatsby-plugin-mdx`,
 			options: {
-				defaultLayouts: { default: path.resolve('./src/components/layout.js') },
+				defaultLayouts: {
+					default: path.resolve('./src/templates/markdownPage.js'),
+				},
 			},
 		},
 		'gatsby-plugin-sharp',

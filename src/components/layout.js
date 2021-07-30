@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import Header from './header'
@@ -11,13 +12,18 @@ const Main = styled.main`
 	margin: 0 auto;
 `
 
-const Layout = ({ children }) => (
+const Layout = ({ children, frontmatter = {} }) => (
 	<StaticQuery
 		query={graphql`
 			query SiteTitleQuery {
 				site {
 					siteMetadata {
 						title
+						description
+						author {
+							name
+						}
+						keywords
 					}
 				}
 			}
