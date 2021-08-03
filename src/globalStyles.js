@@ -30,6 +30,17 @@ const GlobalStyle = createGlobalStyle`
         font-kerning: normal;
         font-feature-settings: "kern", "liga", "clig", "calt";
     }
+
+    body,
+    #___gatsby,
+    #gatsby-focus-wrapper {
+        min-height: 100vh;
+    }
+
+    #gatsby-focus-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
 `
 
 export default GlobalStyle

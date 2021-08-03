@@ -21,10 +21,19 @@ const Nav = styled.nav`
 
 	.header__logo {
 		display: flex;
+		text-decoration: none;
 
 		svg {
 			max-width: 150px;
 			fill: ${theme.brand.primary};
+		}
+
+		span {
+			font-size: 38px;
+			margin-left: 10px;
+			line-height: 1;
+			color: ${theme.brand.primary};
+			text-decoration: none;
 		}
 	}
 `
@@ -78,7 +87,7 @@ const Header = ({ siteTitle }) => (
 	<HeaderNav>
 		<Nav>
 			<Link className='header__logo' to='/'>
-				<Logo />
+				<Logo /> <span>| DOCS</span>
 			</Link>
 			<HeaderLinks>
 				<HeaderLink>

@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
-import SchemaOrg from './schema-org'
+import SchemaOrg from './schemaOrg'
 import config from '../../../config/website'
 import defaultMetaImage from '../../../static/images/metaImage.jpg'
 
@@ -16,6 +16,7 @@ function SEO({
 	description = postMeta.plainTextDescription ||
 		postMeta.description ||
 		seo.description,
+	keywords = postMeta.keywords || seo.keywords || config.keywords,
 	image = metaImage?.startsWith('http:') || metaImage?.startsWith('https:')
 		? metaImage
 		: `${seo.canonicalUrl}${metaImage || defaultMetaImage}`,
@@ -24,13 +25,13 @@ function SEO({
 		: seo.canonicalUrl,
 	datePublished = isBlogPost ? postMeta.datePublished : false,
 }) {
-	console.log(title)
 	return (
 		<>
 			<Helmet>
 				{/* General tags */}
-				<title>{title}</title>
+				<title>{`${title} • ${config.siteTitle}`}</title>
 				<meta name='description' content={description} />
+				<meta name='keywords' content={keywords.join(',')} />
 				<meta name='image' content={image} />
 
 				{/* OpenGraph tags */}
@@ -73,6 +74,7 @@ function SEOWithQuery(props) {
 				siteMetadata {
 					title
 					description
+					keywords
 					canonicalUrl
 					image
 					author {

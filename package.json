@@ -20,6 +20,7 @@
     "@mdx-js/react": "^1.6.22",
     "babel-plugin-styled-components": "^1.13.2",
     "gatsby": "^3.10.2",
+    "gatsby-plugin-force-trailing-slashes": "^1.0.5",
     "gatsby-plugin-gatsby-cloud": "^2.10.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-image": "^1.10.1",
@@ -36,6 +37,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
+    "react-seo-component": "^2.0.2",
     "styled-components": "^5.3.0"
   }
 }

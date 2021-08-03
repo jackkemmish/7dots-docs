@@ -10,6 +10,7 @@ module.exports = {
 	minibio: `Documentation site for 7DOTS developers.`,
 	author: '7DOTS', // Author for schemaORGJSONLD
 	organization: '7DOTS',
+	keywords: ['Developer', 'Gatsby', 'Silverstripe'],
 
 	// siteFBAppID: '123456789', // Facebook App ID - Optional
 	userTwitter: '@hello7dots', // Twitter Username

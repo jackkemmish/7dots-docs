@@ -3,7 +3,6 @@ import SEO from '../components/seo/seo'
 import Layout from '../components/layout'
 
 function MarkdownPage({ children, pageContext: { frontmatter } }) {
-	console.log(frontmatter)
 	return (
 		<>
 			<SEO frontmatter={frontmatter} />

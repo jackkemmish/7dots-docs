@@ -11,7 +11,7 @@ module.exports = {
 		title: config.siteTitle,
 		twitterHandle: config.twitterHandle,
 		description: config.siteDescription,
-		keywords: ['Developer', 'Gatsby', 'Silverstripe'],
+		keywords: config.keywords,
 		canonicalUrl: config.siteUrl,
 		image: config.siteLogo,
 		author: {
@@ -42,6 +42,7 @@ module.exports = {
 		'gatsby-plugin-image',
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-sitemap',
+		'gatsby-plugin-force-trailing-slashes',
 		{
 			resolve: 'gatsby-plugin-manifest',
 			options: {
